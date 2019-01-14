@@ -116,3 +116,17 @@ matrix:
         - npm run build
       script:
         - npm test
+
+    - language: node_js
+      node_js: node
+      before_install:
+        - cd contrib/pai_vscode
+        - if [ $TRAVIS_OS_NAME == "linux" ]; then
+            export CXX="g++-4.9" CC="gcc-4.9" DISPLAY=:99.0;
+            sh -e /etc/init.d/xvfb start;
+            sleep 3;
+          fi
+      install:
+        - yarn install
+      script:
+        - yarn test
