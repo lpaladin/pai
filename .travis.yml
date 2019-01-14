@@ -122,6 +122,6 @@ matrix:
       before_install:
         - cd contrib/pai_vscode
       install:
-        - npm install
+        - yarn install
       script:
-        - npm test
+        - yarn test
