@@ -128,6 +128,5 @@ matrix:
           fi
       install:
         - yarn install
-        - yarn vscode:prepublish
       script:
         - yarn test
